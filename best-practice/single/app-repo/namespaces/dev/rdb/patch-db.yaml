@@ -1,0 +1,20 @@
+# RDB 用 dev 環境設定パッチ
+- op: replace
+  path: /spec/chart/version
+  value: "1.1.x"
+- op: replace
+  path: /spec/settings/instance/name
+  value: mysql-dev
+- op: replace
+  path: /spec/settings/instance/availability/highAvailability
+  value: false
+- op: replace
+  path: /spec/settings/network/aws/subnets
+  value: 
+  - "subnet-0076f20d6d9c2d161"
+  - "subnet-027f9b3f2470f697b"
+- op: replace
+  path: /spec/settings/databases
+  value: 
+  - staging
+  - dev

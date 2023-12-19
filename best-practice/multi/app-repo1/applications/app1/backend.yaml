@@ -1,0 +1,42 @@
+# バックエンドアプリケーションのベースマニフェスト
+apiVersion: managed.msp.sbopsv/v1alpha1
+kind: Application
+metadata:
+  name: backend
+  namespace: app1
+  labels:
+    cnap-package-name: basic-deployment
+spec:
+  chart:
+    name: basic-deployment
+    version: x 
+  settings:
+    image:
+      repository: kanboard/kanboard
+      pullPolicy: IfNotPresent
+      tag: "latest"
+    network:
+      service:
+        ports:
+          - name: backend
+            containerPort: 80
+            servicePort: 80
+    mountSecrets:
+      - remoteRef:
+          key: rdb-admin
+        property: password
+        env: DB_PASSWORD
+    mountconfigmaps:
+     - name: rdb-env
+       key: DB_NAME
+       env: DB_NAME
+     - name: rdb-env
+       key: DB_HOSTNAME
+       env: DB_HOSTNAME
+     - name: rdb-env
+       key: DB_USERNAME
+       env: DB_USERNAME
+     - name: rdb-env
+       key: DB_DRIVER
+       env: DB_DRIVER
+    timeout: 10m

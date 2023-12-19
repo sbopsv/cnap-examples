@@ -1,0 +1,22 @@
+# アプリケーション用ベースマニフェスト
+apiVersion: managed.msp.sbopsv/v1alpha1
+kind: Application
+metadata:
+  name: frontend  # name だけで namespace を指定しない
+spec:
+  chart:
+    name: basic-deployment
+    version: x
+  settings:
+    image:
+      repository: kanboard/kanboard
+      pullPolicy: IfNotPresent
+      tag: "latest"
+    network:
+      domain: app.example.com
+      service:
+        ports:
+          - name: frontend
+            containerPort: 80
+            servicePort: 80
+    timeout: 10m

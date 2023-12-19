@@ -1,0 +1,14 @@
+# RDB 用 dev 環境設定パッチ
+- op: replace
+  path: /spec/chart/version
+  value: "1.1.0"
+- op: replace
+  path: /spec/settings/instance/name
+  value: mysql-prod
+- op: replace
+  path: /spec/settings/instance/availability/highAvailability
+  value: true
+- op: replace
+  path: /spec/settings/databases
+  value: 
+  - app1

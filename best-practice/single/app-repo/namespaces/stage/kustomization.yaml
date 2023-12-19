@@ -1,0 +1,4 @@
+resources:
+  - app
+
+namespace: staging

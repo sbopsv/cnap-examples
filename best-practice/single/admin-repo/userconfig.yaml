@@ -1,0 +1,22 @@
+apiVersion: managed.msp.sbopsv/v1alpha1
+kind: UserConfig
+metadata:
+  name: uc
+  namespace: user-admin
+spec:
+  namespaces: 
+    - name: dev
+      create: true
+  repositories:
+    - name: prod
+      url: ssh://git@github.com/organization/app-repo
+      branch: master
+      path: ./namespaces/production
+    - name: stage
+      url: ssh://git@github.com/organization/app-repo
+      branch: stage
+      path: ./namespaces/staging
+    - name: dev
+      url: ssh://git@github.com/organization/app-repo
+      branch: dev
+      path: ./namespaces/dev

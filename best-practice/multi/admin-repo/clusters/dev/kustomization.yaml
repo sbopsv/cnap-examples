@@ -1,0 +1,10 @@
+resources:
+  - ../../base
+
+# UserConfig に dev 環境用の差分を適用
+patches:
+  - target:
+      kind: UserConfig
+      name: uc
+    path: patch.yaml
+

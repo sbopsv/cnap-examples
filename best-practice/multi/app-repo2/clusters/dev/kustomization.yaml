@@ -1,0 +1,8 @@
+resources:
+  - ../../applications/app2
+
+patches:
+  - path: patch.yaml
+    target:
+      kind: Application
+      name: frontend

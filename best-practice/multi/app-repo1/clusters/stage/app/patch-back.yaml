@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/chart/version
+  value: "1.1.x"
+- op: replace
+  path: /spec/settings/image/tag
+  value: "1.0.0"

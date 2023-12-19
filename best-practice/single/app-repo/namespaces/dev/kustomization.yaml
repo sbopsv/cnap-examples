@@ -1,0 +1,5 @@
+resources:
+  - app
+  - rdb
+
+namespace: dev # namespace を一律 dev に設定する

@@ -1,2 +1,11 @@
+
 resources:
   - ../../../applications/rdb
+
+
+# dev 環境用の設定をパッチ適用
+patches:
+  - path: patch.yaml
+    target:
+      kind: Application
+      name: mysql

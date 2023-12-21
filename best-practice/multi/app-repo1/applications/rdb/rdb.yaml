@@ -23,16 +23,10 @@ spec:
           startTime: 16:00
           endTime: 17:00
       availability:
-        highAvailability: true
+        highAvailability: false
     network:
       aws:
-        subnets:
-          - "subnet-0076f20d6d9c2d164"
-          - "subnet-027f9b3f2470f697a"
+        subnets: []
     databases:
-      - name: app1
-    users:
-      - name: admin
-        secret:
-          key: rdb-admin
-          property: password
+      - app1
+    users: []

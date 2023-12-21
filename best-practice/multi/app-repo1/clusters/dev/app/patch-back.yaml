@@ -4,3 +4,10 @@
 - op: replace
   path: /spec/settings/image/tag
   value: latest
+- op: replace
+  path: /spec/settings/mountSecrets
+  value:
+    - remoteRef:
+      key: rdb-admin-stg
+      property: password
+      env: DB_PASSWORD

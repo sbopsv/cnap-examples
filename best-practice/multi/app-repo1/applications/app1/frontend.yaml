@@ -10,11 +10,11 @@ spec:
     version: x
   settings:
     image:
-      repository: kanboard/kanboard
+      repository: nginx
       pullPolicy: IfNotPresent
       tag: "latest"
     network:
-      domain: app1.prd.example.com
+      domain: app1.dev.example.com
       service:
         ports:
           - name: frontend

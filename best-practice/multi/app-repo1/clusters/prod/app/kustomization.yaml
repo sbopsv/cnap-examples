@@ -1,0 +1,22 @@
+
+resources:
+  - ../../../applications/app1
+
+
+# dev 環境用の設定をパッチ適用
+patches:
+  - path: patch-back.yaml
+    target:
+      kind: Application
+      labelSelector: "cnap-package-name=basic-deployment"
+  - path: patch-front.yaml
+    target:
+      kind: Application
+      name: frontend
+
+# Configmap に dev 環境用の差分をマージ
+configMapGenerator:
+  - name: rdb-env
+    behavior: merge
+    envs:
+      - rdb.env

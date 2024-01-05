@@ -1,0 +1,12 @@
+- op: replace
+  path: /spec/repositories/0/branch
+  value: stage
+- op: replace
+  path: /spec/repositories/0/path
+  value: /clusters/stage
+- op: replace
+  path: /spec/repositories/1/branch
+  value: stage
+- op: replace
+  path: /spec/repositories/1/path
+  value: /clusters/stage

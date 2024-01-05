@@ -1,0 +1,13 @@
+- op: replace
+  path: /spec/chart/version
+  value: "1.x.x"
+- op: replace
+  path: /spec/settings/image/tag
+  value: "1.0.0"
+- op: replace
+  path: /spec/settings/mountSecrets
+  value:
+    - remoteRef:
+      key: rdb-admin-stg
+      property: password
+      env: DB_PASSWORD

@@ -1,0 +1,4 @@
+# example アプリケーションの dev 環境用パッチ
+- op: replace
+  path: /spec/settings/network/domain
+  value: app.stg.example.com # 開発用ドメインを指定

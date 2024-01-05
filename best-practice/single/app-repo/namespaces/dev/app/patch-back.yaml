@@ -1,0 +1,7 @@
+
+- op: replace
+  path: /spec/chart/version
+  value: "*"  # チャートを自動更新する設定
+- op: replace
+  path: /spec/settings/image/tag
+  value: latest # コンテナイメージを latest に設定

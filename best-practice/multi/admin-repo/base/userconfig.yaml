@@ -1,0 +1,21 @@
+# UserConfig のベース設定
+apiVersion: managed.msp.sbopsv/v1alpha1
+kind: UserConfig
+metadata:
+  name: uc
+  namespace: user-admin
+spec:
+  namespaces: 
+    - name: backend
+      create: true
+    - name: frontend
+      create: true
+  repositories:
+    - name: app1
+      url: ssh://git@github.com/organization/app-repo1
+      branch: master
+      path: ./clusters/prod
+    - name: app2
+      url: ssh://git@github.com/organization/app-repo2
+      branch: master
+      path: ./clusters/prod

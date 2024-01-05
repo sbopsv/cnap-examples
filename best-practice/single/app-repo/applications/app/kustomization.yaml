@@ -1,0 +1,11 @@
+resources:
+  - frontend.yaml
+  - backend.yaml
+
+configMapGenerator:
+  - name: rdb-env # 各環境で共通の設定を ConfigMap に出力する
+    envs:
+      - rdb.env
+
+generatorOptions:
+  disableNameSuffixHash: true

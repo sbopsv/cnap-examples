@@ -1,0 +1,8 @@
+resources:
+  - ../../../applications/rdb
+
+patches:
+  - path: patch-db.yaml
+    target:
+      kind: Application
+      name: mysql

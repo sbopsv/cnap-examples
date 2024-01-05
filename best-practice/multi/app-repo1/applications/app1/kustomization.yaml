@@ -1,0 +1,16 @@
+resources:
+  - backend.yaml
+  - frontend.yaml
+
+labels:
+  - pairs:
+      cnap-package-name: basic-deployment
+
+# 共通設定を Configmap に出力
+configMapGenerator:
+  - name: rdb-env
+    envs:
+      - rdb.env
+
+generatorOptions:
+  disableNameSuffixHash: true

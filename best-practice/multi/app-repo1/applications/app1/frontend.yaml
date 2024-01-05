@@ -1,0 +1,23 @@
+# アプリケーション用ベースマニフェスト
+apiVersion: managed.msp.sbopsv/v1alpha1
+kind: Application
+metadata:
+  name: frontend
+  namespace: app1
+spec:
+  chart:
+    name: basic-deployment
+    version: x
+  settings:
+    image:
+      repository: nginx
+      pullPolicy: IfNotPresent
+      tag: "latest"
+    network:
+      domain: app1.dev.example.com
+      service:
+        ports:
+          - name: frontend
+            containerPort: 80
+            servicePort: 80
+    timeout: 10m

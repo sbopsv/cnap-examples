@@ -1,0 +1,7 @@
+# example アプリケーションの dev 本番用パッチ
+- op: replace
+  path: /spec/settings/network/domain
+  value: app.prod.example.com # 本番用ドメインを指定
+- op: replace
+  path: /spec/chart/version
+  value: "1.1.x"

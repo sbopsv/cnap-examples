@@ -1,0 +1,13 @@
+# dev 環境用にブランチとパスを設定するパッチ
+- op: replace
+  path: /spec/repositories/0/branch
+  value: dev
+- op: replace
+  path: /spec/repositories/0/path
+  value: /clusters/dev
+- op: replace
+  path: /spec/repositories/1/branch
+  value: dev
+- op: replace
+  path: /spec/repositories/1/path
+  value: /clusters/dev

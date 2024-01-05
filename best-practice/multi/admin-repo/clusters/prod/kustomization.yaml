@@ -1,0 +1,9 @@
+resources:
+  - ../../base
+
+patches:
+  - target:
+      kind: UserConfig
+      name: uc
+    path: patch.yaml
+

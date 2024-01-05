@@ -1,0 +1,21 @@
+resources:
+  - ../../../applications/app
+
+
+# 環境ごとの差分を patch で適用する
+patches:
+  - path: patch-front.yaml
+    target:
+      kind: Application
+      name: frontend
+  - path: patch-back.yaml
+    target:
+      kind: Application
+      name: backend
+
+# 共通設定の ConfigMap に環境ごとの差分をマージする
+configMapGenerator:
+  - name: rdb-env
+    behavior: merge
+    envs:
+      - rdb.env

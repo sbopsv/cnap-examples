@@ -1,0 +1,18 @@
+- op: replace
+  path: /spec/settings/instance/name
+  value: mysql-stg
+- op: replace
+  path: /spec/settings/network/aws/subnets
+  value: 
+    - "subnet-xxxxxxxxxxxxxxxxx"
+    - "subnet-yyyyyyyyyyyyyyyyy"
+- op: add
+  path: /spec/settings/databases/-
+  value: dev
+- op: replace
+  path: /spec/settings/users
+  value:
+  - name: admin
+    secret:
+      key: rdb-admin-stg
+      property: password

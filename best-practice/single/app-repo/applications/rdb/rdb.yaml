@@ -1,0 +1,38 @@
+# RDB 用ベースマニフェスト
+apiVersion: managed.msp.sbopsv/v1alpha1
+kind: Application
+metadata:
+  name: mysql # name だけで namespace は指定しない
+spec:
+  chart:
+    name: rdb
+    version: x
+  settings:
+    databaseType: mysql
+    instance:
+      name: mysql
+      machineType: db.t3.micro
+      location: ap-northeast-1
+      engineVersion: "8.0"
+      storage:
+        type: gp2
+        size: 20
+      backup:
+        retentionPeriod: 7
+        aws:
+          startTime: 16:00
+          endTime: 17:00
+      availability:
+        highAvailability: true
+    network:
+      aws:
+        subnets:
+          - "subnet-0076f20d6d9c2d164"
+          - "subnet-027f9b3f2470f697a"
+    databases:
+      - name: prod
+    users:
+      - name: admin
+        secret:
+          key: rdb-admin
+          property: password

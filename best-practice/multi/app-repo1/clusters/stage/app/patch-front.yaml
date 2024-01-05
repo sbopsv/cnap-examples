@@ -1,0 +1,7 @@
+# example アプリケーションの stage 環境用パッチ
+- op: replace
+  path: /spec/settings/network/domain
+  value: app.stg.example.com # 検証用ドメインを指定
+- op: replace
+  path: /spec/chart/version
+  value: "1.x.x"

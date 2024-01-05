@@ -1,7 +1,6 @@
 resources:
   - ../../../applications/app
 
-namespace: dev # namespace を一律 dev に設定する
 
 # 環境ごとの差分を patch で適用する
 patches:
